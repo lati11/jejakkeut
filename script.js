@@ -56,7 +56,7 @@ function addOutcomeRow() {
             <div class="flex items-center gap-2">
                 <label class="text-sm font-medium text-gray-700 whitespace-nowrap">확률</label>
                 <input type="number" data-type="outcome-prob"
-                       class="w-12 py-1 px-2 border border-gray-300 rounded-md text-right">
+                       class="w-16 py-1 px-2 border border-gray-300 rounded-md text-right">
                 <span class="text-sm text-gray-500 whitespace-nowrap">%</span>
             </div>
         </div>
