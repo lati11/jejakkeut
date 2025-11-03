@@ -40,10 +40,10 @@ function addMaterialRow(defaultName = '', defaultAmount = '') {
                     </div>
 
                     <input type="number" data-type="unit-count" value="1" 
-                           class="w-16 py-1 px-2 border-none rounded-md text-right focus:ring-0 focus:border-none">
+                           class="w-12 py-1 px-2 border-none rounded-md text-right focus:ring-0 focus:border-none">
                     <span class="text-sm text-gray-500 whitespace-nowrap">개당</span>
                     <input type="number" data-type="unit-price"
-                           class="w-12 py-1 px-2 border-none rounded-md text-right focus:ring-0 focus:border-none">
+                           class="w-28 py-1 px-2 border-none rounded-md text-right focus:ring-0 focus:border-none">
                     <span class="text-sm text-gray-500 whitespace-nowrap">코인</span>
                 </div>
             </div>
