@@ -454,7 +454,7 @@
       "stamina": 500,
       "materials": [
         { "name": "고대의 맘모스 뿔", "amount": 2 },
-        { "name": "어둠의 정령의 부서진 스태프", "amount": 4 },
+        { "name": "어둠의 정령의 부서진 스태프", "amount": 2 },
         { "name": "영혼의 원소 정수", "amount": 32 }
       ],
       "outcomes": [
