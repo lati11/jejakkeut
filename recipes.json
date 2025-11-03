@@ -1,0 +1,542 @@
+{
+
+    "미약한 불의 파편": {
+        "stamina": 0,
+        "materials": [
+        { "name": "불의 원소 가루", "amount": 16 },
+        { "name": "애벌레", "amount": 16 }
+        ],
+        "outcomes": []
+    },
+    "불의 파편": {
+        "stamina": 0,
+        "materials": [
+        { "name": "미약한 불의 파편", "amount": 8 },
+        { "name": "무당벌레", "amount": 144 },
+        { "name": "불의 원소 조각", "amount": 144 },
+        { "name": "벌레잡이 풀", "amount": 32 }
+        ],
+        "outcomes": []
+    },
+    "농축된 불의 파편": {
+        "stamina": 0,
+        "materials": [
+        { "name": "불의 파편", "amount": 4 },
+        { "name": "메뚜기", "amount": 576 },
+        { "name": "불의 원소 정수", "amount": 576 },
+        { "name": "스니퍼 알", "amount": 32 }
+        ],
+        "outcomes": []
+    },
+    "미약한 바람의 파편": {
+        "stamina": 0,
+        "materials": [
+        { "name": "바람의 원소 가루", "amount": 16 },
+        { "name": "나무껍질", "amount": 16 }
+        ],
+        "outcomes": []
+    },
+    "바람의 파편": {
+        "stamina": 0,
+        "materials": [
+        { "name": "미약한 바람의 파편", "amount": 8 },
+        { "name": "고목나무 수액", "amount": 144 },
+        { "name": "바람의 원소 조각", "amount": 144 },
+        { "name": "맹그로브 주아", "amount": 64 }
+        ],
+        "outcomes": []
+    },
+    "농축된 바람의 파편": {
+        "stamina": 0,
+        "materials": [
+        { "name": "바람의 파편", "amount": 4 },
+        { "name": "맨드레이크", "amount": 576 },
+        { "name": "바람의 원소 정수", "amount": 576 },
+        { "name": "작은 흘림잎", "amount": 32 }
+        ],
+        "outcomes": []
+    },
+    "미약한 물의 파편": {
+        "stamina": 0,
+        "materials": [
+        { "name": "물의 원소 가루", "amount": 16 },
+        { "name": "진주", "amount": 16 }
+        ],
+        "outcomes": []
+    },
+    "물의 파편": {
+        "stamina": 0,
+        "materials": [
+        { "name": "미약한 물의 파편", "amount": 8 },
+        { "name": "행운의 편지", "amount": 144 },
+        { "name": "물의 원소 조각", "amount": 144 },
+        { "name": "앵무조개 껍데기", "amount": 32 }
+        ],
+        "outcomes": []
+    },
+    "농축된 물의 파편": {
+        "stamina": 0,
+        "materials": [
+        { "name": "물의 파편", "amount": 4 },
+        { "name": "해적의보물상자", "amount": 576 },
+        { "name": "물의 원소 정수", "amount": 576 },
+        { "name": "전달체", "amount": 32 }
+        ],
+        "outcomes": []
+    },
+    "미약한 땅의 파편": {
+        "stamina": 0,
+        "materials": [
+        { "name": "땅의 원소 가루", "amount": 16 },
+        { "name": "가넷", "amount": 16 }
+        ],
+        "outcomes": []
+    },
+    "땅의 파편": {
+        "stamina": 0,
+        "materials": [
+        { "name": "미약한 땅의 파편", "amount": 8 },
+        { "name": "아쿠아마린", "amount": 144 },
+        { "name": "땅의 원소 조각", "amount": 144 },
+        { "name": "작은 자수정 봉우리", "amount": 32 }
+        ],
+        "outcomes": []
+    },
+    "농축된 땅의 파편": {
+        "stamina": 0,
+        "materials": [
+        { "name": "땅의 파편", "amount": 4 },
+        { "name": "토파즈", "amount": 576 },
+        { "name": "땅의 원소 정수", "amount": 576 },
+        { "name": "큰 자수정 봉우리", "amount": 32 }
+        ],
+        "outcomes": []
+    },
+    "미약한 영혼의 파편": {
+        "stamina": 0,
+        "materials": [
+        { "name": "영혼의 원소 가루", "amount": 16 },
+        { "name": "야생사냥꾼 증표I", "amount": 1 }
+        ],
+        "outcomes": []
+    },
+    "영혼의 파편": {
+        "stamina": 0,
+        "materials": [
+        { "name": "미약한 영혼의 파편", "amount": 8 },
+        { "name": "야생사냥꾼 증표II", "amount": 8 },
+        { "name": "영혼의 원소 조각", "amount": 144 }
+        ],
+        "outcomes": []
+    },
+    "농축된 영혼의 파편": {
+        "stamina": 0,
+        "materials": [
+        { "name": "영혼의 파편", "amount": 4 },
+        { "name": "야생사냥꾼 증표III", "amount": 32 },
+        { "name": "영혼의 원소 정수", "amount": 576 }
+        ],
+        "outcomes": []
+    },
+    "못": {
+      "stamina": 30,
+      "materials": [
+        { "name": "철 주괴", "amount": 64 },
+        { "name": "구리 주괴", "amount": 64 },
+        { "name": "레드 스톤", "amount": 32 }
+      ],
+      "outcomes": [
+        { "amount": 16 },
+        { "amount": 12 },
+        { "amount": 8 }
+      ]
+    },
+    "기본 접착제": {
+      "stamina": 30,
+      "materials": [
+        { "name": "슬라임 블록", "amount": 64 },
+        { "name": "꿀 블록", "amount": 32 },
+        { "name": "물병", "amount": 8 }
+      ],
+      "outcomes": [
+        { "amount": 16 },
+        { "amount": 12 },
+        { "amount": 8 }
+      ]
+    },
+    "곰백토": {
+      "stamina": 50,
+      "materials": [
+        { "name": "애벌레", "amount": 16 },
+        { "name": "불의 원소 가루", "amount": 56 },
+        { "name": "영혼의 원소 가루", "amount": 20 }
+      ],
+      "outcomes": [
+        { "amount": 12 },
+        { "amount": 10 },
+        { "amount": 8 }
+      ]
+    },
+    "거친 종이": {
+      "stamina": 50,
+      "materials": [
+        { "name": "나무 껍질", "amount": 16 },
+        { "name": "바람의 원소 가루", "amount": 56 },
+        { "name": "영혼의 원소 가루", "amount": 20 }
+      ],
+      "outcomes": [
+        { "amount": 12 },
+        { "amount": 10 },
+        { "amount": 8 }
+      ]
+    },
+    "반짝수": {
+      "stamina": 50,
+      "materials": [
+        { "name": "진주", "amount": 16 },
+        { "name": "물의 원소 가루", "amount": 56 },
+        { "name": "영혼의 원소 가루", "amount": 20 }
+      ],
+      "outcomes": [
+        { "amount": 12 },
+        { "amount": 10 },
+        { "amount": 8 }
+      ]
+    },
+    "베어 강력 접착제": {
+      "stamina": 50,
+      "materials": [
+        { "name": "가넷", "amount": 16 },
+        { "name": "땅의 원소 가루", "amount": 56 },
+        { "name": "영혼의 원소 가루", "amount": 20 }
+      ],
+      "outcomes": [
+        { "amount": 12 },
+        { "amount": 10 },
+        { "amount": 8 }
+      ]
+    },
+    "연마 가루": {
+      "stamina": 100,
+      "materials": [
+        { "name": "아쿠아마린", "amount": 32 },
+        { "name": "솔라이트 원석", "amount": 1 },
+        { "name": "용왕의 왕관", "amount": 1 },
+        { "name": "땅의 원소 조각", "amount": 48 },
+        { "name": "영혼의 원소 조각", "amount": 24 }
+      ],
+      "outcomes": [
+        { "amount": 5 },
+        { "amount": 4 },
+        { "amount": 3 }
+      ]
+    },
+    "베어 크리스탈": {
+      "stamina": 100,
+      "materials": [
+        { "name": "행운의 편지", "amount": 32 },
+        { "name": "용왕의 왕관", "amount": 1 },
+        { "name": "개량된 목화솜", "amount": 1 },
+        { "name": "물의 원소 조각", "amount": 48 },
+        { "name": "영혼의 원소 조각", "amount": 24 }
+      ],
+      "outcomes": [
+        { "amount": 5 },
+        { "amount": 4 },
+        { "amount": 3 }
+      ]
+    },
+    "탐욕의 실": {
+      "stamina": 100,
+      "materials": [
+        { "name": "고목나무 수액", "amount": 32 },
+        { "name": "원시 부족 가면", "amount": 1 },
+        { "name": "솔라이트 원석", "amount": 1 },
+        { "name": "바람의 원소 조각", "amount": 48 },
+        { "name": "영혼의 원소 조각", "amount": 24 }
+      ],
+      "outcomes": [
+        { "amount": 5 },
+        { "amount": 4 },
+        { "amount": 3 }
+      ]
+    },
+    "에너지 오브": {
+      "stamina": 100,
+      "materials": [
+        { "name": "무당벌레", "amount": 32 },
+        { "name": "개량된 목화솜", "amount": 1 },
+        { "name": "원시 부족 가면", "amount": 1 },
+        { "name": "불의 원소 조각", "amount": 48 },
+        { "name": "영혼의 원소 조각", "amount": 24 }
+      ],
+      "outcomes": [
+        { "amount": 5 },
+        { "amount": 4 },
+        { "amount": 3 }
+      ]
+    },
+    "요리용 그릇": {
+      "stamina": 200,
+      "materials": [
+        { "name": "곰백토", "amount": 8 },
+        { "name": "에너지 오브", "amount": 2 }
+      ],
+      "outcomes": [
+        { "amount": 8 }
+      ]
+    },
+    "디저트용 그릇": {
+      "stamina": 200,
+      "materials": [
+        { "name": "거친 종이", "amount": 8 },
+        { "name": "베어 크리스탈", "amount": 2 }
+      ],
+      "outcomes": [
+        { "amount": 8 }
+      ]
+    },
+    "음료병": {
+      "stamina": 200,
+      "materials": [
+        { "name": "반짝수", "amount": 8 },
+        { "name": "탐욕의 실", "amount": 2 }
+      ],
+      "outcomes": [
+        { "amount": 8 }
+      ]
+    },
+    "공예품 끌": {
+      "stamina": 200,
+      "materials": [
+        { "name": "베어 크리스탈", "amount": 1 },
+        { "name": "에너지 오브", "amount": 1 },
+        { "name": "거친 종이", "amount": 8 }
+      ],
+      "outcomes": [
+        { "amount": 3 }
+      ]
+    },
+    "고품질 종이": {
+      "stamina": 200,
+      "materials": [
+        { "name": "메뚜기", "amount": 16 },
+        { "name": "실종된 농부의 땅문서", "amount": 2 },
+        { "name": "고대식물의 모종", "amount": 1 },
+        { "name": "곰백토", "amount": 12 },
+        { "name": "에너지 오브", "amount": 6 },
+        { "name": "불의 원소 정수", "amount": 24 }
+      ],
+      "outcomes": [
+        { "amount": 3 },
+        { "amount": 2 },
+        { "amount": 1 }
+      ]
+    },
+    "고품질 원단": {
+      "stamina": 500,
+      "materials": [
+        { "name": "딱정벌레", "amount": 80 },
+        { "name": "고대식물의 모종", "amount": 2 },
+        { "name": "불의 정령의 꽃 화관", "amount": 4 },
+        { "name": "불의 원소 정수", "amount": 32 },
+        { "name": "에너지 오브", "amount": 4 }
+      ],
+      "outcomes": [
+        { "amount": 1 },
+        { "amount": 0 }
+      ]
+    },
+    "정화 플라스크": {
+      "stamina": 200,
+      "materials": [
+        { "name": "해적의 보물상자", "amount": 16 },
+        { "name": "실종된 잠수부 헬맷", "amount": 2 },
+        { "name": "고대 물의 영혼석", "amount": 1 },
+        { "name": "반짝수", "amount": 12 },
+        { "name": "베어 크리스탈", "amount": 6 },
+        { "name": "물의 원소 정수", "amount": 24 }
+      ],
+      "outcomes": [
+        { "amount": 3 },
+        { "amount": 2 },
+        { "amount": 1 }
+      ]
+    },
+    "정화의 결정": {
+      "stamina": 500,
+      "materials": [
+        { "name": "마녀의 눈물", "amount": 80 },
+        { "name": "고대 물의 영혼석", "amount": 2 },
+        { "name": "물의 정령의 유리구두", "amount": 4 },
+        { "name": "물의 원소 정수", "amount": 32 },
+        { "name": "베어 크리스탈", "amount": 4 }
+      ],
+      "outcomes": [
+        { "amount": 1 },
+        { "amount": 0 }
+      ]
+    },
+    "보존 코어 소자": {
+      "stamina": 200,
+      "materials": [
+        { "name": "토파즈", "amount": 16 },
+        { "name": "실종된 광부의 표본 샘플", "amount": 2 },
+        { "name": "고대의 피라미드 큐브", "amount": 1 },
+        { "name": "베어 강력 접착제", "amount": 12 },
+        { "name": "연마 가루", "amount": 6 },
+        { "name": "땅의 원소 정수", "amount": 24 }
+      ],
+      "outcomes": [
+        { "amount": 1 },
+        { "amount": 2 },
+        { "amount": 1 }
+      ]
+    },
+    "보존 코어 모듈": {
+      "stamina": 500,
+      "materials": [
+        { "name": "페리도트", "amount": 80 },
+        { "name": "고대의 피라미드 큐브", "amount": 2 },
+        { "name": "대지의 정령의 호박화석", "amount": 4 },
+        { "name": "땅의 원소 정수", "amount": 32 },
+        { "name": "연마 가루", "amount": 4 }
+      ],
+      "outcomes": [
+        { "amount": 1 },
+        { "amount": 0 }
+      ]
+    },
+    "체인": {
+      "stamina": 200,
+      "materials": [
+        { "name": "맨드레이크", "amount": 16 },
+        { "name": "실종된 나무꾼의 장갑", "amount": 2 },
+        { "name": "고대 정령의 메아리", "amount": 1 },
+        { "name": "거친 종이", "amount": 12 },
+        { "name": "탐욕의 실", "amount": 6 },
+        { "name": "바람의 원소 정수", "amount": 24 }
+      ],
+      "outcomes": [
+        { "amount": 3 },
+        { "amount": 2 },
+        { "amount": 1 }
+      ]
+    },
+    "베어 철판": {
+      "stamina": 500,
+      "materials": [
+        { "name": "바오밥나무 뿌리", "amount": 80 },
+        { "name": "고대 정령의 메아리", "amount": 2 },
+        { "name": "나무의 정령의 연꽃 찻잔", "amount": 4 },
+        { "name": "바람의 원소 정수", "amount": 32 },
+        { "name": "탐욕의 실", "amount": 4 }
+      ],
+      "outcomes": [
+        { "amount": 1 },
+        { "amount": 0 }
+      ]
+    },
+    "영혼 가죽": {
+      "stamina": 200,
+      "materials": [
+        { "name": "실종된 사냥꾼 고글", "amount": 3 },
+        { "name": "고대의 맘모스 뿔", "amount": 1 },
+        { "name": "영혼의 원소 정수", "amount": 24 }
+      ],
+      "outcomes": [
+        { "amount": 3 },
+        { "amount": 2 },
+        { "amount": 1 }
+      ]
+    },
+    "무두질된 영혼 가죽": {
+      "stamina": 500,
+      "materials": [
+        { "name": "고대의 맘모스 뿔", "amount": 2 },
+        { "name": "어둠의 정령의 부서진 스태프", "amount": 4 },
+        { "name": "영혼의 원소 정수", "amount": 32 }
+      ],
+      "outcomes": [
+        { "amount": 1 },
+        { "amount": 0 }
+      ]
+    },
+    "드래곤 마법진": {
+    "stamina": 100,
+    "materials": [
+      { "name": "고품질 원단", "amount": 1 },
+      { "name": "영혼 가죽", "amount": 2 },
+      { "name": "어둠의 정령의 부서진 스태프", "amount": 1 },
+      { "name": "공예품 끌", "amount": 4 },
+      { "name": "불의 결정체", "amount": 32 }
+    ],
+    "outcomes": [
+      { "amount": 3 },
+      { "amount": 2 },
+      { "amount": 1 }
+    ]
+  },
+  "곤충 채집통": {
+    "stamina": 100,
+    "materials": [
+      { "name": "보존 코어 모듈", "amount": 1 },
+      { "name": "정화 플라스크", "amount": 2 },
+      { "name": "어둠의 정령의 부서진 스태프", "amount": 1 },
+      { "name": "공예품 끌", "amount": 4 },
+      { "name": "대지의 결정체", "amount": 32 }
+    ],
+    "outcomes": [
+      { "amount": 3 },
+      { "amount": 2 },
+      { "amount": 1 }
+    ]
+  },
+  "위더 크루세이더의 갑옷": {
+    "stamina": 100,
+    "materials": [
+      { "name": "베어 철판", "amount": 1 },
+      { "name": "체인", "amount": 2 },
+      { "name": "어둠의 정령의 부서진 스태프", "amount": 1 },
+      { "name": "공예품 끌", "amount": 4 },
+      { "name": "바람의 결정체", "amount": 32 }
+    ],
+    "outcomes": [
+      { "amount": 3 },
+      { "amount": 2 },
+      { "amount": 1 }
+    ]
+  },
+  "맹독의 손길": {
+    "stamina": 100,
+    "materials": [
+      { "name": "무두질된 영혼 가죽", "amount": 1 },
+      { "name": "보존 코어소자", "amount": 2 },
+      { "name": "어둠의 정령의 부서진 스태프", "amount": 1 },
+      { "name": "공예품 끌", "amount": 4 },
+      { "name": "물의 결정체", "amount": 32 }
+    ],
+    "outcomes": [
+      { "amount": 3 },
+      { "amount": 2 },
+      { "amount": 1 }
+    ]
+  },
+  "여의주": {
+    "stamina": 100,
+    "materials": [
+      { "name": "정화의 결정", "amount": 1 },
+      { "name": "고품질 종이", "amount": 2 },
+      { "name": "어둠의 정령의 부서진 스태프", "amount": 1 },
+      { "name": "공예품 끌", "amount": 4 },
+      { "name": "빛의 결정체", "amount": 16 },
+      { "name": "어둠의 결정체", "amount": 16 }
+    ],
+    "outcomes": [
+      { "amount": 3 },
+      { "amount": 2 },
+      { "amount": 1 }
+    ]
+  }
+
+  }
