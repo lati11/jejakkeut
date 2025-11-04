@@ -651,7 +651,7 @@
       "stamina": 200,
       "materials": [
         { "name": "실종된 사냥꾼 고글", "amount": 3 },
-        { "name": "고대의 맘모스 뿔", "amount": 1 },
+        { "name": "고대 맘모스 뿔", "amount": 1 },
         { "name": "영혼의 원소 정수", "amount": 24 }
       ],
       "outcomes": [
@@ -663,7 +663,7 @@
     "무두질된 영혼 가죽": {
       "stamina": 500,
       "materials": [
-        { "name": "고대의 맘모스 뿔", "amount": 2 },
+        { "name": "고대 맘모스 뿔", "amount": 2 },
         { "name": "어둠의 정령의 부서진 스태프", "amount": 2 },
         { "name": "영혼의 원소 정수", "amount": 32 }
       ],
@@ -721,7 +721,7 @@
     "stamina": 100,
     "materials": [
       { "name": "무두질된 영혼 가죽", "amount": 1 },
-      { "name": "보존 코어소자", "amount": 2 },
+      { "name": "보존 코어 소자", "amount": 2 },
       { "name": "어둠의 정령의 부서진 스태프", "amount": 1 },
       { "name": "공예품 끌", "amount": 4 },
       { "name": "물의 결정체", "amount": 32 }
