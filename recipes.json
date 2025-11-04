@@ -460,7 +460,7 @@
       "stamina": 100,
       "materials": [
         { "name": "고목나무 수액", "amount": 32 },
-        { "name": "원시 부족 가면", "amount": 1 },
+        { "name": "원시부족 가면", "amount": 1 },
         { "name": "솔라이트 원석", "amount": 1 },
         { "name": "바람의 원소 조각", "amount": 48 },
         { "name": "영혼의 원소 조각", "amount": 24 }
@@ -476,7 +476,7 @@
       "materials": [
         { "name": "무당벌레", "amount": 32 },
         { "name": "개량된 목화솜", "amount": 1 },
-        { "name": "원시 부족 가면", "amount": 1 },
+        { "name": "원시부족 가면", "amount": 1 },
         { "name": "불의 원소 조각", "amount": 48 },
         { "name": "영혼의 원소 조각", "amount": 24 }
       ],
