@@ -664,7 +664,7 @@
       "stamina": 500,
       "materials": [
         { "name": "고대 맘모스 뿔", "amount": 2 },
-        { "name": "어둠의 정령의 부서진 스태프", "amount": 2 },
+        { "name": "어둠의 정령의 부러진 스태프", "amount": 2 },
         { "name": "영혼의 원소 정수", "amount": 32 }
       ],
       "outcomes": [
@@ -677,7 +677,7 @@
     "materials": [
       { "name": "고품질 원단", "amount": 1 },
       { "name": "영혼 가죽", "amount": 2 },
-      { "name": "어둠의 정령의 부서진 스태프", "amount": 1 },
+      { "name": "어둠의 정령의 부러진 스태프", "amount": 1 },
       { "name": "공예품 끌", "amount": 4 },
       { "name": "불의 결정체", "amount": 32 }
     ],
@@ -692,7 +692,7 @@
     "materials": [
       { "name": "보존 코어 모듈", "amount": 1 },
       { "name": "정화 플라스크", "amount": 2 },
-      { "name": "어둠의 정령의 부서진 스태프", "amount": 1 },
+      { "name": "어둠의 정령의 부러진 스태프", "amount": 1 },
       { "name": "공예품 끌", "amount": 4 },
       { "name": "대지의 결정체", "amount": 32 }
     ],
@@ -707,7 +707,7 @@
     "materials": [
       { "name": "베어 철판", "amount": 1 },
       { "name": "체인", "amount": 2 },
-      { "name": "어둠의 정령의 부서진 스태프", "amount": 1 },
+      { "name": "어둠의 정령의 부러진 스태프", "amount": 1 },
       { "name": "공예품 끌", "amount": 4 },
       { "name": "바람의 결정체", "amount": 32 }
     ],
@@ -722,7 +722,7 @@
     "materials": [
       { "name": "무두질된 영혼 가죽", "amount": 1 },
       { "name": "보존 코어 소자", "amount": 2 },
-      { "name": "어둠의 정령의 부서진 스태프", "amount": 1 },
+      { "name": "어둠의 정령의 부러진 스태프", "amount": 1 },
       { "name": "공예품 끌", "amount": 4 },
       { "name": "물의 결정체", "amount": 32 }
     ],
@@ -737,7 +737,7 @@
     "materials": [
       { "name": "정화의 결정", "amount": 1 },
       { "name": "고품질 종이", "amount": 2 },
-      { "name": "어둠의 정령의 부서진 스태프", "amount": 1 },
+      { "name": "어둠의 정령의 부러진 스태프", "amount": 1 },
       { "name": "공예품 끌", "amount": 4 },
       { "name": "빛의 결정체", "amount": 16 },
       { "name": "어둠의 결정체", "amount": 16 }
