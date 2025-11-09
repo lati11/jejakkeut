@@ -16,7 +16,7 @@ const mainIcon = document.getElementById('main-item-icon');
 function getIconPath(koreanName) {
     const englishName = nameMap[koreanName];
     if (englishName) {
-        return `/images/${englishName}.png`;
+        return `images/${englishName}.png`;
     }
     return "";
 }
