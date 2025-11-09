@@ -229,8 +229,12 @@ function addLiveCalculators() {
     materialsListEl.addEventListener('click', onStackBtnClick);
 }
 
-addMaterialBtn.addEventListener('click', addMaterialRow);
-addOutcomeBtn.addEventListener('click', addOutcomeRow);
+addMaterialBtn.addEventListener('click', () => {
+    addMaterialRow(); 
+});
+addOutcomeBtn.addEventListener('click', () => {
+    addOutcomeRow(); 
+});
 
 materialsListEl.addEventListener('click', removeRow);
 outcomesListEl.addEventListener('click', removeRow);
