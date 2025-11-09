@@ -116,7 +116,7 @@
         "stamina": 0,
         "materials": [
         { "name": "영혼의 원소 가루", "amount": 16 },
-        { "name": "야생사냥꾼 증표I", "amount": 1 }
+        { "name": "야생 사냥꾼 증표 I", "amount": 1 }
         ],
         "outcomes": []
     },
@@ -124,7 +124,7 @@
         "stamina": 0,
         "materials": [
         { "name": "미약한 영혼의 파편", "amount": 8 },
-        { "name": "야생사냥꾼 증표II", "amount": 8 },
+        { "name": "야생 사냥꾼 증표 II", "amount": 8 },
         { "name": "영혼의 원소 조각", "amount": 144 }
         ],
         "outcomes": []
@@ -133,7 +133,7 @@
         "stamina": 0,
         "materials": [
         { "name": "영혼의 파편", "amount": 4 },
-        { "name": "야생사냥꾼 증표III", "amount": 32 },
+        { "name": "야생 사냥꾼 증표 III", "amount": 32 },
         { "name": "영혼의 원소 정수", "amount": 576 }
         ],
         "outcomes": []
