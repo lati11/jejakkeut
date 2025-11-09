@@ -1,4 +1,5 @@
 let presetRecipes = {};
+let nameMap = {};
 
 const materialsListEl = document.getElementById('materials-list');
 const addMaterialBtn = document.getElementById('add-material');
@@ -10,16 +11,39 @@ const staminaUnitPriceEl = document.getElementById('stamina-unit-price');
 const resultCostEl = document.getElementById('result-cost');
 const itemNameInput = document.getElementById('item-name');
 const presetDropdown = document.getElementById('preset-dropdown');
+const mainIcon = document.getElementById('main-item-icon');
+
+function getIconPath(koreanName) {
+    const englishName = nameMap[koreanName];
+    if (englishName) {
+        return `/images/${englishName}.png`;
+    }
+    return "";
+}
 
 function addMaterialRow(defaultName = '', defaultAmount = '') {
     const wrapper = document.createElement('div');
     wrapper.className = "material-row flex items-center gap-2";
+    const iconPath = getIconPath(defaultName);
     wrapper.innerHTML = `
         <div class="flex-grow flex flex-wrap items-center justify-between gap-x-4 gap-y-2 p-2 border rounded-md bg-gray-50">
             
             <div class="flex flex-wrap items-center gap-x-4 gap-y-2">
-                <input type="text" placeholder="재료 이름" value="${defaultName}"
-                       class="py-1 px-2 border border-gray-300 rounded-md w-30">
+                <div class="relative w-60">
+                    <img src="${iconPath}" alt=""
+                        class="material-icon absolute left-2 top-1/2 -translate-y-1/2 w-5 h-5" 
+                        style="display: ${iconPath ? 'block' : 'none'}" 
+                        onerror="this.style.display='none'">
+                    
+                    <input type="text" placeholder="재료 이름" value="${defaultName}"
+                        data-type="material-name-input"
+                        class="pl-9 py-1 px-2 border border-gray-300 rounded-md w-full"
+                        autocomplete="off">
+
+                    <div data-type="material-dropdown" 
+                         class="absolute z-10 w-full bg-white border border-gray-300 rounded-md shadow-lg mt-1 hidden max-h-40 overflow-y-auto">
+                    </div>
+                </div>
             
                 <div class="flex items-center gap-3">
                     <label class="text-sm font-medium text-gray-700 whitespace-nowrap">x</label>
@@ -84,7 +108,7 @@ function removeRow(e) {
 }
 
 
-function showDropdown() {
+function showDropdown() { 
     const filter = itemNameInput.value.toUpperCase();
     presetDropdown.innerHTML = '';
     
@@ -99,10 +123,14 @@ function showDropdown() {
 
     filteredKeys.forEach(key => {
         const item = document.createElement('div');
-        item.textContent = key;
-        item.className = 'p-2 hover:bg-gray-100 cursor-pointer';
+        const iconPath = getIconPath(key);
+        item.innerHTML = `
+            <img src="${iconPath}" alt="" class="w-5 h-5 mr-2 inline-block" onerror="this.style.display='none'">
+            <span>${key}</span> 
+        `;
+        item.className = 'flex items-center p-2 hover:bg-gray-100 cursor-pointer';
         
-        item.addEventListener('mousedown', () => {
+        item.addEventListener('mousedown', () => { 
             itemNameInput.value = key;
             presetDropdown.classList.add('hidden');
             applyRecipe(key);
@@ -112,10 +140,60 @@ function showDropdown() {
     presetDropdown.classList.remove('hidden');
 }
 
+function showMaterialDropdown(inputElement) { 
+    const dropdown = inputElement.nextElementSibling;
+    if (!dropdown || dropdown.dataset.type !== 'material-dropdown') return;
+
+    const filterValue = inputElement.value;
+    if (!filterValue || filterValue.trim() === '') {
+        dropdown.classList.add('hidden');
+        return;
+    }
+
+    const filter = inputElement.value;
+    dropdown.innerHTML = '';
+    
+    const filteredKeys = Object.keys(nameMap).filter(key => 
+        key.toUpperCase().includes(filter)
+    );
+
+    if (filteredKeys.length === 0) {
+        dropdown.classList.add('hidden');
+        return;
+    }
+
+    filteredKeys.forEach(key => {
+        const item = document.createElement('div');
+        const iconPath = getIconPath(key);
+        item.innerHTML = `
+            <img src="${iconPath}" alt="" class="w-5 h-5 mr-2 inline-block" onerror="this.style.display='none'">
+            <span>${key}</span>
+        `;
+        item.className = 'flex items-center p-2 hover:bg-gray-100 cursor-pointer';
+        
+        item.addEventListener('mousedown', () => { 
+            const container = inputElement.closest('.relative');
+            const iconImg = container.querySelector('.material-icon');
+            
+            inputElement.value = key; 
+            iconImg.src = iconPath; 
+            iconImg.style.display = iconPath ? 'block' : 'none'; 
+            
+            dropdown.classList.add('hidden');
+            calculateExpectedCost(); 
+        });
+        dropdown.appendChild(item);
+    });
+    dropdown.classList.remove('hidden');
+}
+
 
 function applyRecipe(recipeKey) {
     const recipe = presetRecipes[recipeKey];
     if (!recipe) return;
+    const mainIconPath = getIconPath(recipeKey);
+    mainIcon.src = mainIconPath;
+    mainIcon.style.display = mainIconPath ? 'block' : 'none';
 
     staminaAmountEl.value = recipe.stamina;
 
@@ -208,6 +286,18 @@ function onStackBtnClick(e) {
 }
 
 
+function updateMaterialIcon(inputElement) {
+    const container = inputElement.closest('.relative');
+    const iconImg = container.querySelector('.material-icon');
+    const path = getIconPath(inputElement.value);
+    
+    if (iconImg) {
+        iconImg.src = path;
+        iconImg.style.display = path ? 'block' : 'none';
+    }
+}
+
+
 function addLiveCalculators() {
     staminaAmountEl.addEventListener('input', calculateExpectedCost);
     staminaUnitCountEl.addEventListener('input', calculateExpectedCost);
@@ -216,6 +306,11 @@ function addLiveCalculators() {
     materialsListEl.addEventListener('input', (e) => {
         if (e.target.tagName === 'INPUT') {
             calculateExpectedCost();
+
+            if (e.target.dataset.type === 'material-name-input') {
+                showMaterialDropdown(e.target);
+                updateMaterialIcon(e.target); 
+            }
         }
     });
     outcomesListEl.addEventListener('input', (e) => {
@@ -224,8 +319,22 @@ function addLiveCalculators() {
         }
     });
 
-    materialsListEl.addEventListener('focusin', onUnitCountFocus);
-    materialsListEl.addEventListener('focusout', onUnitCountBlur);
+    materialsListEl.addEventListener('focusin', (e) => {
+        onUnitCountFocus(e);
+    });
+    
+    materialsListEl.addEventListener('focusout', (e) => {
+        onUnitCountBlur(e);
+        if (e.target.dataset.type === 'material-name-input') {
+            const dropdown = e.target.nextElementSibling;
+            if (dropdown && dropdown.dataset.type === 'material-dropdown') {
+                setTimeout(() => {
+                    dropdown.classList.add('hidden');
+                }, 150);
+            }
+        }
+    });
+    
     materialsListEl.addEventListener('click', onStackBtnClick);
 }
 
@@ -242,22 +351,46 @@ outcomesListEl.addEventListener('click', removeRow);
 
 document.addEventListener('DOMContentLoaded', async () => {
     try {
-        const response = await fetch('recipes.json');
-        presetRecipes = await response.json();
+        const [recipeResponse, nameResponse] = await Promise.all([
+            fetch('recipes.json'),
+            fetch('name.json')
+        ]);
+        presetRecipes = await recipeResponse.json();
+        nameMap = await nameResponse.json();
     } catch (error) {
-        console.error('레시피를 불러오는 데 실패했습니다:', error);
+        console.error('레시피/이름 파일 로딩 실패 :', error);
     }
 
     addMaterialRow();
     addOutcomeRow();
     addLiveCalculators();
     
-    itemNameInput.addEventListener('input', showDropdown);
+    itemNameInput.addEventListener('input', () => {
+        showDropdown();
+        
+        const path = getIconPath(itemNameInput.value);
+        if (path) {
+            mainIcon.src = path;
+            mainIcon.style.display = 'block';
+        } else {
+            mainIcon.src = '';  
+            mainIcon.style.display = 'none'; 
+        }
+    });
+
     itemNameInput.addEventListener('focus', showDropdown);
 
     itemNameInput.addEventListener('blur', () => {
         setTimeout(() => {
             presetDropdown.classList.add('hidden');
+            const path = getIconPath(itemNameInput.value);
+            if (path) {
+                mainIcon.src = path;
+                mainIcon.style.display = 'block';
+            } else {
+                mainIcon.src = ''; 
+                mainIcon.style.display = 'none'; 
+            }
         }, 100);
     });
 });

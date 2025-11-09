@@ -14,15 +14,22 @@
         
         <h1 class="flex items-baseline text-3xl font-bold text-left mb-6 text-gray-800">
             <span>🔨 제작끝</span>
-            <span class="ml-2 text-sm font-normal text-gray-400">v. Beta</span>
+            <span class="ml-2 text-sm font-normal text-gray-400">v 1.0.0</span>
         </h1>
 
-        <div>
+        <div class="relative">
             <label for="item-name" class="block text-sm font-medium text-gray-700">아이템명</label>
+            
+            <img id="main-item-icon" src="" alt="" 
+                 class="absolute left-2 top-10 mt-0.5 -translate-y-1/2 w-5 h-5 hidden" 
+                 onerror="this.style.display='none'">
+
             <input type="text" id="item-name" 
-                   class="mt-1 block w-full md:w-48 py-1 px-3 border border-gray-300 rounded-md shadow-sm text-lg font-semibold"
-                   autocomplete="off"> <div id="preset-dropdown" class="absolute z-10 w-full md:w-48 bg-white border border-gray-300 rounded-md shadow-lg mt-1 hidden max-h-60 overflow-y-auto">
-                </div>
+                   class="pl-10 mt-1 block w-full md:w-56 py-1 px-3 border border-gray-300 rounded-md shadow-sm text-lg font-semibold"
+                   autocomplete="off">
+            
+            <div id="preset-dropdown" class="absolute z-10 w-full md:w-56 bg-white border border-gray-300 rounded-md shadow-lg mt-1 hidden max-h-60 overflow-y-auto">
+            </div>
         </div>
 
         <div class="space-y-6 mt-6">

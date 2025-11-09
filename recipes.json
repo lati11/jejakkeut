@@ -78,7 +78,7 @@
         "stamina": 0,
         "materials": [
         { "name": "물의 파편", "amount": 4 },
-        { "name": "해적의보물상자", "amount": 576 },
+        { "name": "해적의 보물상자", "amount": 576 },
         { "name": "물의 원소 정수", "amount": 576 },
         { "name": "전달체", "amount": 32 }
         ],
@@ -353,7 +353,7 @@
       "materials": [
         { "name": "철 주괴", "amount": 64 },
         { "name": "구리 주괴", "amount": 64 },
-        { "name": "레드 스톤", "amount": 32 }
+        { "name": "레드스톤 가루", "amount": 32 }
       ],
       "outcomes": [
         { "amount": 16 },
