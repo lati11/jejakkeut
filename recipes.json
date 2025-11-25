@@ -598,7 +598,7 @@
         { "name": "땅의 원소 정수", "amount": 24 }
       ],
       "outcomes": [
-        { "amount": 1 },
+        { "amount": 3 },
         { "amount": 2 },
         { "amount": 1 }
       ]
