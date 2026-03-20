@@ -356,9 +356,9 @@
         { "name": "레드스톤 가루", "amount": 32 }
       ],
       "outcomes": [
-        { "amount": 16 },
-        { "amount": 12 },
-        { "amount": 8 }
+        { "amount": 16, "prob": 1.64 },
+        { "amount": 12, "prob": 16.39 },
+        { "amount": 8, "prob": 81.97 }
       ]
     },
     "기본 접착제": {
@@ -554,7 +554,7 @@
       ],
       "outcomes": [
         { "amount": 1 },
-        { "amount": 0 }
+        { "amount": 1 }
       ]
     },
     "정화 플라스크": {
@@ -584,7 +584,7 @@
       ],
       "outcomes": [
         { "amount": 1 },
-        { "amount": 0 }
+        { "amount": 1 }
       ]
     },
     "보존 코어 소자": {
@@ -614,7 +614,7 @@
       ],
       "outcomes": [
         { "amount": 1 },
-        { "amount": 0 }
+        { "amount": 1 }
       ]
     },
     "체인": {
@@ -644,7 +644,7 @@
       ],
       "outcomes": [
         { "amount": 1 },
-        { "amount": 0 }
+        { "amount": 1 }
       ]
     },
     "영혼 가죽": {
@@ -669,7 +669,7 @@
       ],
       "outcomes": [
         { "amount": 1 },
-        { "amount": 0 }
+        { "amount": 1 }
       ]
     },
     "드래곤 마법진": {
