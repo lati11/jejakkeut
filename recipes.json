@@ -98,7 +98,7 @@
         { "name": "미약한 땅의 파편", "amount": 8 },
         { "name": "아쿠아마린", "amount": 144 },
         { "name": "땅의 원소 조각", "amount": 144 },
-        { "name": "작은 자수정 봉우리", "amount": 32 }
+        { "name": "작은 자수정 봉오리", "amount": 32 }
         ],
         "outcomes": []
     },
@@ -108,7 +108,7 @@
         { "name": "땅의 파편", "amount": 4 },
         { "name": "토파즈", "amount": 576 },
         { "name": "땅의 원소 정수", "amount": 576 },
-        { "name": "큰 자수정 봉우리", "amount": 32 }
+        { "name": "큰 자수정 봉오리", "amount": 32 }
         ],
         "outcomes": []
     },
