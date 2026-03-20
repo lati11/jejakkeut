@@ -145,7 +145,7 @@
         { "name": "일반 장비 가루", "amount": 32 }
         ],
         "outcomes": [
-            { "amount": 1 }
+            { "amount": 1, "prob": 100 }
         ]
     },
     "농부의 작은 지식": {
@@ -155,7 +155,7 @@
         { "name": "일반 장비 가루", "amount": 32 }
         ],
         "outcomes": [
-            { "amount": 1 }
+            { "amount": 1, "prob": 100 }
         ]
     },
     "나무꾼의 작은 지식": {
@@ -165,7 +165,7 @@
         { "name": "일반 장비 가루", "amount": 32 }
         ],
         "outcomes": [
-            { "amount": 1 }
+            { "amount": 1, "prob": 100 }
         ]
     },
     "어부의 작은 지식": {
@@ -175,7 +175,7 @@
         { "name": "일반 장비 가루", "amount": 32 }
         ],
         "outcomes": [
-            { "amount": 1 }
+            { "amount": 1, "prob": 100 }
         ]
     },
     "사냥꾼의 작은 지식": {
@@ -185,7 +185,7 @@
         { "name": "일반 장비 가루", "amount": 32 }
         ],
         "outcomes": [
-            { "amount": 1 }
+            { "amount": 1, "prob": 100 }
         ]
     },
     "대지의 보주": {
@@ -195,7 +195,7 @@
         { "name": "고급 장비 가루", "amount": 16 }
         ],
         "outcomes": [
-            { "amount": 1 }
+            { "amount": 1, "prob": 100}
         ]
     },
     "불의 보주": {
@@ -205,7 +205,7 @@
         { "name": "고급 장비 가루", "amount": 16 }
         ],
         "outcomes": [
-            { "amount": 1 }
+            { "amount": 1, "prob": 100 }
         ]
     },
     "바람의 보주": {
@@ -215,7 +215,7 @@
         { "name": "고급 장비 가루", "amount": 16 }
         ],
         "outcomes": [
-            { "amount": 1 }
+            { "amount": 1, "prob": 100 }
         ]
     },
     "물의 보주": {
@@ -225,7 +225,7 @@
         { "name": "고급 장비 가루", "amount": 16 }
         ],
         "outcomes": [
-            { "amount": 1 }
+            { "amount": 1, "prob": 100 }
         ]
     },
     "영혼의 보주": {
@@ -235,7 +235,7 @@
         { "name": "고급 장비 가루", "amount": 16 }
         ],
         "outcomes": [
-            { "amount": 1 }
+            { "amount": 1, "prob": 100 }
         ]
     },
     "쓸만한 대지의 병": {
@@ -246,7 +246,7 @@
         { "name": "솔라이트 원석", "amount": 32 }
         ],
         "outcomes": [
-            { "amount": 1 }
+            { "amount": 1, "prob": 100 }
         ]
     },
     "쓸만한 해바라기 조화": {
@@ -257,7 +257,7 @@
         { "name": "개량된 목화솜", "amount": 32 }
         ],
         "outcomes": [
-            { "amount": 1 }
+            { "amount": 1, "prob": 100 }
         ]
     },
     "쓸만한 바람의 시야": {
@@ -268,7 +268,7 @@
         { "name": "원시부족 가면", "amount": 32 }
         ],
         "outcomes": [
-            { "amount": 1 }
+            { "amount": 1, "prob": 1 }
         ]
     },
     "쓸만한 닻의 물결": {
@@ -279,7 +279,7 @@
         { "name": "용왕의 왕관", "amount": 32 }
         ],
         "outcomes": [
-            { "amount": 1 }
+            { "amount": 1, "prob": 100 }
         ]
     },
     "쓸만한 사마귀의 손길": {
@@ -290,7 +290,7 @@
         { "name": "신비한 동물 가죽", "amount": 32 }
         ],
         "outcomes": [
-            { "amount": 1 }
+            { "amount": 1, "prob": 100 }
         ]
     },
     "대지의 병": {
@@ -301,7 +301,7 @@
         { "name": "실종된 광부의 표본샘플", "amount": 32 }
         ],
         "outcomes": [
-            { "amount": 1 }
+            { "amount": 1, "prob": 100 }
         ]
     },
     "해바라기 조화": {
@@ -312,7 +312,7 @@
         { "name": "실종된 농부의 땅문서", "amount": 32 }
         ],
         "outcomes": [
-            { "amount": 1 }
+            { "amount": 1, "prob": 100 }
         ]
     },
     "바람의 시야": {
@@ -323,7 +323,7 @@
         { "name": "실종된 나무꾼의 장갑", "amount": 32 }
         ],
         "outcomes": [
-            { "amount": 1 }
+            { "amount": 1, "prob": 100 }
         ]
     },
     "닻의 물결": {
@@ -334,7 +334,7 @@
         { "name": "실종된 잠수부 헬멧", "amount": 32 }
         ],
         "outcomes": [
-            { "amount": 1 }
+            { "amount": 1, "prob": 100 }
         ]
     },
     "사마귀의 손길": {
@@ -345,7 +345,7 @@
         { "name": "실종된 사냥꾼 고글", "amount": 32 }
         ],
         "outcomes": [
-            { "amount": 1 }
+            { "amount": 1, "prob": 100 }
         ]
     },
     "못": {
