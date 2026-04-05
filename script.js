@@ -7,6 +7,9 @@ const ITEM_CATEGORIES = {
     "연마 가루": "II급 기본재", "베어 크리스탈": "II급 기본재", "탐욕의 실": "II급 기본재", "에너지 오브": "II급 기본재",
     "고품질 종이": "III급 기본재", "정화 플라스크": "III급 기본재", "체인": "III급 기본재", "보존 코어 소자": "III급 기본재", "영혼 가죽": "III급 기본재",
     "고품질 원단": "IV급 기본재", "정화의 결정": "IV급 기본재", "베어 철판": "IV급 기본재", "보존 코어 모듈": "IV급 기본재", "무두질된 영혼 가죽": "IV급 기본재",
+    "베어 프린세스 모자": "UNCOMMON 교역품", "개량된 가죽 벨트": "UNCOMMON 교역품", "바다의 보물지도": "UNCOMMON 교역품", "선장의 미니 포켓백": "UNCOMMON 교역품", "타락의 안내서": "UNCOMMON 교역품", "수상한 약재 정제세트": "UNCOMMON 교역품", "천계의 찬란한 물약": "UNCOMMON 교역품", "타락한 요정의 상자": "UNCOMMON 교역품", "가죽 어깨 보호구": "UNCOMMON 교역품",
+    "광휘의 정화석": "RARE 교역품", "스컬웹의 악의 구슬": "RARE 교역품", "불꽃 감옥 구슬": "RARE 교역품", "물방울 떡꼬치": "RARE 교역품", "환 약": "RARE 교역품", "수호의 증표": "RARE 교역품", "불길한 증표": "RARE 교역품",
+    "바다의 울림 팬던트": "EPIC 교역품", "메뚜기떼의 해적 깃발": "EPIC 교역품", "날카로운 송곳니 너클": "EPIC 교역품", "엔더 소드": "EPIC 교역품", "루미너트 루프": "EPIC 교역품", "따스한 후드 점퍼": "EPIC 교역품",
     "드래곤 마법진": "LEGENDARY 교역품", "곤충 채집통": "LEGENDARY 교역품", "위더 크루세이더의 갑옷": "LEGENDARY 교역품", "맹독의 손길": "LEGENDARY 교역품", "여의주": "LEGENDARY 교역품"
 };
 
@@ -47,6 +50,7 @@ const resultCostEl = document.getElementById('result-cost');
 const itemNameInput = document.getElementById('item-name');
 const presetDropdown = document.getElementById('preset-dropdown');
 const mainIcon = document.getElementById('main-item-icon');
+const saveResultBtn = document.getElementById('save-result-btn');
 
 function getIconPath(koreanName) {
     const englishName = nameMap[koreanName];
@@ -99,10 +103,10 @@ function addMaterialRow(defaultName = '', defaultAmount = '') {
                     </div>
 
                     <input type="text" inputmode="numeric" data-type="unit-count" value="1" 
-                           class="w-12 py-1 px-2 border-none bg-transparent dark:text-white rounded-md text-right focus:ring-0 focus:border-none">
+                           class="w-14 py-1 px-2 border-none bg-transparent dark:text-white rounded-md text-right focus:ring-0 focus:border-none">
                     <span class="text-sm text-gray-500 dark:text-gray-400 whitespace-nowrap">개당</span>
                     <input type="text" inputmode="numeric" data-type="unit-price"
-                           class="w-28 py-1 px-2 border-none bg-transparent dark:text-white rounded-md text-right focus:ring-0 focus:border-none">
+                           class="w-32 py-1 px-2 border-none bg-transparent dark:text-white rounded-md text-right focus:ring-0 focus:border-none">
                     <span class="text-sm text-gray-500 dark:text-gray-400 whitespace-nowrap">코인</span>
                 </div>
             </div>
@@ -494,6 +498,30 @@ addOutcomeBtn.addEventListener('click', () => {
     addOutcomeRow(); 
 });
 
+saveResultBtn.addEventListener('click', () => {
+    const currentItem = itemNameInput.value.trim();
+    const currentCost = parseNum(resultCostEl.textContent);
+
+    if (!currentItem) {
+        alert("아이템 선택 후 재료 정보를 적어주세요.");
+        return;
+    }
+    if (currentCost <= 0) {
+        alert("저장할 제작비가 계산되지 않았어요.");
+        return;
+    }
+
+    const savedPrices = JSON.parse(localStorage.getItem('savedPrices')) || {};
+    savedPrices[currentItem] = { unitCount: 1, unitPrice: currentCost };
+    localStorage.setItem('savedPrices', JSON.stringify(savedPrices));
+
+    const originalText = saveResultBtn.textContent;
+    saveResultBtn.textContent = "✔ 저장됨";
+    setTimeout(() => {
+        saveResultBtn.textContent = originalText;
+    }, 1500);
+});
+
 materialsListEl.addEventListener('click', removeRow);
 outcomesListEl.addEventListener('click', removeRow);
 
@@ -687,7 +715,8 @@ document.addEventListener("DOMContentLoaded", () => {
         
         const categories = [
             "0급 기본재", "I급 기본재", "II급 기본재", 
-            "III급 기본재", "IV급 기본재", "LEGENDARY 교역품"
+            "III급 기본재", "IV급 기본재", 
+            "UNCOMMON 교역품", "RARE 교역품", "EPIC 교역품", "LEGENDARY 교역품"
         ];
 
         function getDefaultOutcomes(categoryName) {
@@ -786,5 +815,311 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         
         calculateExpectedCost(); 
+    });
+});
+
+
+const ALTAR_BASE_SCORES = {
+    "드래곤 마법진": 2000, "곤충 채집통": 2000, "위더 크루세이더의 갑옷": 2000, "맹독의 손길": 2000, "여의주": 2000,
+    "바다의 울림 팬던트": 750, "메뚜기떼의 해적 깃발": 750, "날카로운 송곳니 너클": 750, "엔더 소드": 750, "루미너트 루프": 750, "따스한 후드 점퍼": 750,
+    "광휘의 정화석": 300, "스컬웹의 악의 구슬": 300, "불꽃 감옥 구슬": 300, "물방울 떡꼬치": 300, "환 약": 300, "수호의 증표": 300, "불길한 증표": 300,
+    "베어 프린세스 모자": 100, "개량된 가죽 벨트": 100, "바다의 보물지도": 100, "선장의 미니 포켓백": 100, "타락의 안내서": 100, "수상한 약재 정제세트": 100, "천계의 찬란한 물약": 100, "타락한 요정의 상자": 100, "가죽 어깨 보호구": 100
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+    const modal = document.getElementById('altar-modal');
+    const modalContent = document.getElementById('altar-modal-content');
+    const openBtn = document.getElementById('altar-calc-btn');
+    const closeBtn = document.getElementById('close-altar-modal-btn');
+    const itemsArea = document.getElementById('altar-items-area');
+    const targetScoreInput = document.getElementById('altar-target-score');
+    const multiplierInput = document.getElementById('altar-multiplier');
+    const runBtn = document.getElementById('run-altar-calc-btn');
+    const resultArea = document.getElementById('altar-result-area');
+
+    const savedAltarSettings = JSON.parse(localStorage.getItem('altarSettings')) || { targetScore: 0, multiplier: 1.0, forced: {} };
+    targetScoreInput.value = formatNum(savedAltarSettings.targetScore);
+    multiplierInput.value = savedAltarSettings.multiplier;
+
+    openBtn?.addEventListener('click', () => {
+        modal.classList.remove('hidden');
+        renderAltarItems();
+        setTimeout(() => {
+            modal.classList.remove('opacity-0');
+            modalContent.classList.remove('scale-95');
+        }, 10);
+    });
+
+    closeBtn?.addEventListener('click', closeAltarModal);
+    modal?.addEventListener('click', (e) => { if (e.target === modal) closeAltarModal(); });
+
+    function closeAltarModal() {
+        modal.classList.add('opacity-0');
+        modalContent.classList.add('scale-95');
+        setTimeout(() => modal.classList.add('hidden'), 300);
+    }
+
+    [targetScoreInput, multiplierInput].forEach(el => {
+        el.addEventListener('input', saveAltarSettings);
+    });
+
+    function saveAltarSettings() {
+        const forced = {};
+        const rows = itemsArea.querySelectorAll('.altar-item-row');
+        rows.forEach(row => {
+            const name = row.dataset.name;
+            const count = parseNum(row.querySelector('[data-type="altar-force"]').value);
+            if (count > 0) forced[name] = count;
+        });
+        localStorage.setItem('altarSettings', JSON.stringify({
+            targetScore: parseNum(targetScoreInput.value),
+            multiplier: Number(multiplierInput.value) || 1.0,
+            forced: forced
+        }));
+    }
+
+    function renderAltarItems() {
+        const savedPrices = JSON.parse(localStorage.getItem('savedPrices')) || {};
+        const savedAltarSettings = JSON.parse(localStorage.getItem('altarSettings')) || { forced: {} };
+        const forcedCounts = savedAltarSettings.forced || {};
+
+        const groups = { "LEGENDARY": [], "EPIC": [], "RARE": [], "UNCOMMON": [] };
+        
+        for (const [name, score] of Object.entries(ALTAR_BASE_SCORES)) {
+            if (score === 2000) groups["LEGENDARY"].push(name);
+            else if (score === 750) groups["EPIC"].push(name);
+            else if (score === 300) groups["RARE"].push(name);
+            else groups["UNCOMMON"].push(name);
+        }
+
+        let html = '<div class="space-y-4">';
+        for (const [groupName, items] of Object.entries(groups)) {
+            let color = "text-yellow-600 dark:text-yellow-400";
+            if(groupName==="EPIC") color = "text-purple-600 dark:text-purple-400";
+            if(groupName==="RARE") color = "text-blue-600 dark:text-blue-400";
+            if(groupName==="UNCOMMON") color = "text-green-600 dark:text-green-400";
+
+            html += `<div class="p-3 border dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 shadow-sm">
+                        <h4 class="font-bold ${color} mb-2 border-b dark:border-gray-600 pb-1">${groupName} 교역품</h4>
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-2">`;
+            
+            items.forEach(name => {
+                const price = savedPrices[name]?.unitPrice || '';
+                const force = forcedCounts[name] || '';
+                const iconPath = getIconPath(name);
+                
+                html += `
+                <div class="altar-item-row flex items-center justify-between p-2 bg-gray-50 dark:bg-gray-800 rounded border dark:border-gray-600" data-name="${name}">
+                    <div class="flex items-center gap-2 overflow-hidden w-1/2">
+                        <img src="${iconPath}" class="w-5 h-5 flex-shrink-0" onerror="this.style.display='none'">
+                        <span class="text-sm font-medium dark:text-gray-200 truncate" title="${name}">${name}</span>
+                    </div>
+                    <div class="flex flex-col items-end gap-1 w-1/2">
+                        <div class="flex items-center">
+                            <span class="text-xs text-gray-500 mr-1">시세</span>
+                            <input type="text" inputmode="numeric" data-type="altar-price" value="${formatNum(price)}" placeholder="코인" class="w-24 py-1 px-1 border dark:border-gray-500 rounded bg-white dark:bg-gray-700 dark:text-white text-right text-xs focus:ring-1 focus:ring-blue-500 outline-none">
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-xs text-gray-500 mr-1">포함시킬 개수</span>
+                            <input type="text" inputmode="numeric" data-type="altar-force" value="${formatNum(force)}" placeholder="개" class="w-10 py-1 px-1 border dark:border-gray-500 rounded bg-white dark:bg-gray-700 dark:text-white text-right text-xs focus:ring-1 focus:ring-blue-500 outline-none">
+                        </div>
+                    </div>
+                </div>`;
+            });
+            html += `</div></div>`;
+        }
+        html += '</div>';
+        itemsArea.innerHTML = html;
+    }
+
+    itemsArea?.addEventListener('input', (e) => {
+        const target = e.target;
+        const row = target.closest('.altar-item-row');
+        if (!row) return;
+
+        const name = row.dataset.name;
+        if (target.dataset.type === 'altar-price') {
+            const priceVal = parseNum(target.value);
+            const savedPrices = JSON.parse(localStorage.getItem('savedPrices')) || {};
+            if (priceVal > 0) {
+                savedPrices[name] = { unitCount: 1, unitPrice: priceVal };
+            } else {
+                delete savedPrices[name];
+            }
+            localStorage.setItem('savedPrices', JSON.stringify(savedPrices));
+        } else if (target.dataset.type === 'altar-force') {
+            saveAltarSettings();
+        }
+    });
+
+    runBtn?.addEventListener('click', () => {
+        const targetScore = parseNum(targetScoreInput.value);
+        const multiplier = Number(multiplierInput.value) || 1.0;
+        
+        if (targetScore <= 0) {
+            alert("목표 점수를 입력해주세요!"); return;
+        }
+
+        const savedPrices = JSON.parse(localStorage.getItem('savedPrices')) || {};
+        const savedAltarSettings = JSON.parse(localStorage.getItem('altarSettings')) || { forced: {} };
+        const forced = savedAltarSettings.forced || {};
+
+        const itemsList = Object.keys(ALTAR_BASE_SCORES).map(name => ({
+            name: name,
+            baseScore: ALTAR_BASE_SCORES[name],
+            price: savedPrices[name]?.unitPrice || Infinity 
+        }));
+
+        let counts = {};
+        itemsList.forEach(item => counts[item.name] = forced[item.name] || 0);
+
+        function getState(cObj) {
+            let cost = 0, scoreSum = 0, totalItems = 0;
+            for (let i = 0; i < itemsList.length; i++) {
+                const name = itemsList[i].name;
+                const count = cObj[name];
+                if (count === 0) continue;
+                
+                totalItems += count;
+                const added = Math.max(0, count - (forced[name] || 0));
+                cost += added * itemsList[i].price;
+                
+                for (let k = 0; k < count; k++) {
+                    scoreSum += Math.floor(itemsList[i].baseScore * Math.max(0.5, 1.0 - k * 0.1));
+                }
+            }
+            return { cost, score: Math.floor(scoreSum * multiplier), totalItems, scoreSum };
+        }
+
+        while (true) {
+            const state = getState(counts);
+            if (state.score >= targetScore) break;
+            
+            let bestMove = null;
+            let minMarginalCost = Infinity;
+
+            if (state.totalItems < 64) {
+                for (let i = 0; i < itemsList.length; i++) {
+                    if (itemsList[i].price === Infinity) continue;
+                    const gainScoreBase = Math.floor(itemsList[i].baseScore * Math.max(0.5, 1.0 - counts[itemsList[i].name] * 0.1));
+                    if (gainScoreBase <= 0) continue;
+                    
+                    const newScoreSum = state.scoreSum + gainScoreBase;
+                    const actualGain = Math.floor(newScoreSum * multiplier) - state.score;
+                    if (actualGain <= 0) continue;
+
+                    const ratio = itemsList[i].price / actualGain;
+                    if (ratio < minMarginalCost) { minMarginalCost = ratio; bestMove = { type: 'add', name: itemsList[i].name }; }
+                }
+            } 
+            if (state.totalItems >= 64) {
+                for (let r = 0; r < itemsList.length; r++) {
+                    const remName = itemsList[r].name;
+                    if (counts[remName] > (forced[remName] || 0)) {
+                        const lossScoreBase = Math.floor(itemsList[r].baseScore * Math.max(0.5, 1.0 - (counts[remName] - 1) * 0.1));
+                        
+                        for (let a = 0; a < itemsList.length; a++) {
+                            const addName = itemsList[a].name;
+                            if (remName === addName || itemsList[a].price === Infinity) continue;
+                            
+                            const gainScoreBase = Math.floor(itemsList[a].baseScore * Math.max(0.5, 1.0 - counts[addName] * 0.1));
+                            
+                            const newScoreSum = state.scoreSum - lossScoreBase + gainScoreBase;
+                            const actualGain = Math.floor(newScoreSum * multiplier) - state.score;
+                            
+                            if (actualGain > 0) {
+                                const costDiff = itemsList[a].price - itemsList[r].price;
+                                const ratio = costDiff / actualGain;
+                                if (ratio < minMarginalCost) { 
+                                    minMarginalCost = ratio; 
+                                    bestMove = { type: 'replace', addName: addName, remName: remName }; 
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            if (bestMove) {
+                if (bestMove.type === 'add') counts[bestMove.name]++;
+                else { counts[bestMove.remName]--; counts[bestMove.addName]++; }
+            } else {
+                break; 
+            }
+        }
+
+        while (true) {
+            const state = getState(counts);
+            let bestRemName = null, maxSaveRatio = -Infinity;
+
+            for (let i = 0; i < itemsList.length; i++) {
+                const name = itemsList[i].name;
+                if (counts[name] > (forced[name] || 0)) {
+                    const lossScoreBase = Math.floor(itemsList[i].baseScore * Math.max(0.5, 1.0 - (counts[name] - 1) * 0.1));
+                    const newScoreSum = state.scoreSum - lossScoreBase;
+                    const newScore = Math.floor(newScoreSum * multiplier);
+                    
+                    if (newScore >= targetScore) {
+                        const actualLoss = state.score - newScore;
+                        const ratio = actualLoss > 0 ? itemsList[i].price / actualLoss : Infinity; 
+                        if (ratio > maxSaveRatio) { maxSaveRatio = ratio; bestRemName = name; }
+                    }
+                }
+            }
+            if (bestRemName) counts[bestRemName]--;
+            else break;
+        }
+
+        const finalState = getState(counts);
+        
+        let resultHtml = "";
+        let totalAddedCost = 0;
+
+        itemsList.forEach(item => {
+            const totalCount = counts[item.name];
+            const forceCount = forced[item.name] || 0;
+            const addCount = Math.max(0, totalCount - forceCount);
+
+            if (totalCount > 0) {
+                let badge = "";
+                if (forceCount > 0) {
+                    badge = addCount === 0 ? `<span class="text-xs bg-gray-200 text-gray-600 px-1 rounded ml-2">보유템 사용</span>` 
+                                           : `<span class="text-xs bg-blue-100 text-blue-600 px-1 rounded ml-2">${forceCount}개 보유</span>`;
+                }
+
+                const iconPath = getIconPath(item.name);
+                
+                resultHtml += `<div class="flex items-center justify-between border-b border-gray-200 dark:border-gray-600/50 py-2">
+                                  <div class="flex items-center gap-2">
+                                  <img src="${iconPath}" class="w-5 h-5 flex-shrink-0" onerror="this.style.display='none'">
+                                      <div class="text-sm dark:text-gray-200">${item.name} <strong class="ml-1">${totalCount}개</strong>${badge}</div>
+                                  </div>`;
+                if (addCount > 0) {
+                    resultHtml += `<div class="text-gray-500 dark:text-gray-400">${addCount}개 추가 ➝ ${formatNum(addCount * item.price)} 코인</div>`;
+                } else {
+                    resultHtml += `<div class="text-gray-400 text-xs mt-0.5">추가 불필요</div>`;
+                }
+                resultHtml += `</div>`;
+                
+                totalAddedCost += addCount * item.price;
+            }
+        });
+
+        if (finalState.score < targetScore) {
+            resultHtml = `<div class="text-red-500 font-bold">⚠️ 시세가 등록된 아이템이 부족하여 64개를 채워도 목표 점수에 도달할 수 없습니다.</div>` + resultHtml;
+        }
+
+        document.getElementById('altar-res-cost').textContent = formatNum(totalAddedCost) + " 코인";
+        
+        const scoreEl = document.getElementById('altar-res-score');
+        scoreEl.textContent = formatNum(finalState.score) + " 점";
+        scoreEl.className = finalState.score >= targetScore ? "text-xl font-bold text-green-600 dark:text-green-400" : "text-xl font-bold text-red-600 dark:text-red-400";
+        
+        const countEl = document.getElementById('altar-res-count');
+        countEl.textContent = `${finalState.totalItems} / 64`;
+        countEl.className = finalState.totalItems === 64 ? "text-lg font-bold text-red-500" : "text-lg font-bold text-gray-900 dark:text-white";
+
+        document.getElementById('altar-res-list').innerHTML = resultHtml || "추가 구매가 필요하지 않거나, 시세 정보가 없습니다.";
+        resultArea.classList.remove('hidden');
     });
 });

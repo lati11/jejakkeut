@@ -672,6 +672,7 @@
         { "amount": 1 }
       ]
     },
+    
     "드래곤 마법진": {
     "stamina": 100,
     "materials": [
@@ -680,6 +681,318 @@
       { "name": "어둠의 정령의 부러진 스태프", "amount": 1 },
       { "name": "공예품 끌", "amount": 4 },
       { "name": "불의 결정체", "amount": 32 }
+    ],
+    "outcomes": [
+      { "amount": 3 },
+      { "amount": 2 },
+      { "amount": 1 }
+    ]
+  },
+  "베어 프린세스 모자": {
+    "stamina": 100,
+    "materials": [
+      { "name": "부드러운 깃털", "amount": 9 },
+      { "name": "신비한 동물 가죽", "amount": 2 },
+      { "name": "거친 종이", "amount": 4 }
+    ],
+    "outcomes": [
+      { "amount": 3 },
+      { "amount": 2 },
+      { "amount": 1 }
+    ]
+  },
+  "개량된 가죽 벨트": {
+    "stamina": 100,
+    "materials": [
+      { "name": "짐승의 가죽", "amount": 9 },
+      { "name": "신비한 동물 가죽", "amount": 2 },
+      { "name": "곰백토", "amount": 4 }
+    ],
+    "outcomes": [
+      { "amount": 3 },
+      { "amount": 2 },
+      { "amount": 1 }
+    ]
+  },
+  "바다의 보물지도": {
+    "stamina": 100,
+    "materials": [
+      { "name": "부드러운 털", "amount": 9 },
+      { "name": "신비한 동물 가죽", "amount": 2 },
+      { "name": "거친 종이", "amount": 4 }
+    ],
+    "outcomes": [
+      { "amount": 3 },
+      { "amount": 2 },
+      { "amount": 1 }
+    ]
+  },
+  "선장의 미니 포켓백": {
+    "stamina": 100,
+    "materials": [
+      { "name": "물방울의 별", "amount": 9 },
+      { "name": "신비한 동물 가죽", "amount": 2 },
+      { "name": "베어 강력 접착제", "amount": 4 }
+    ],
+    "outcomes": [
+      { "amount": 3 },
+      { "amount": 2 },
+      { "amount": 1 }
+    ]
+  },
+  "타락의 안내서": {
+    "stamina": 100,
+    "materials": [
+      { "name": "더러운 천", "amount": 9 },
+      { "name": "신비한 동물 가죽", "amount": 2 },
+      { "name": "거친 종이", "amount": 4 }
+    ],
+    "outcomes": [
+      { "amount": 3 },
+      { "amount": 2 },
+      { "amount": 1 }
+    ]
+  },
+  "수상한 약재 정제세트": {
+    "stamina": 100,
+    "materials": [
+      { "name": "수상한 주머니", "amount": 9 },
+      { "name": "신비한 동물 가죽", "amount": 2 },
+      { "name": "반짝수", "amount": 4 }
+    ],
+    "outcomes": [
+      { "amount": 3 },
+      { "amount": 2 },
+      { "amount": 1 }
+    ]
+  },
+  "천계의 찬란한 물약": {
+    "stamina": 100,
+    "materials": [
+      { "name": "미스틱 코어", "amount": 9 },
+      { "name": "신비한 동물 가죽", "amount": 2 },
+      { "name": "반짝수", "amount": 4 }
+    ],
+    "outcomes": [
+      { "amount": 3 },
+      { "amount": 2 },
+      { "amount": 1 }
+    ]
+  },
+  "타락한 요정의 상자": {
+    "stamina": 100,
+    "materials": [
+      { "name": "엔더 진주 가루", "amount": 9 },
+      { "name": "신비한 동물 가죽", "amount": 2 },
+      { "name": "곰백토", "amount": 4 }
+    ],
+    "outcomes": [
+      { "amount": 3 },
+      { "amount": 2 },
+      { "amount": 1 }
+    ]
+  },
+  "가죽 어깨 보호구": {
+    "stamina": 100,
+    "materials": [
+      { "name": "짐승의 가죽", "amount": 9 },
+      { "name": "신비한 동물 가죽", "amount": 2 },
+      { "name": "베어 강력 접착제", "amount": 4 }
+    ],
+    "outcomes": [
+      { "amount": 3 },
+      { "amount": 2 },
+      { "amount": 1 }
+    ]
+  },
+  "광휘의 정화석": {
+    "stamina": 100,
+    "materials": [
+      { "name": "에너지 오브", "amount": 1 },
+      { "name": "실종된 사냥꾼 고글", "amount": 2 },
+      { "name": "공예품 끌", "amount": 1 },
+      { "name": "반짝수", "amount": 2 },
+      { "name": "미스틱 코어", "amount": 18 }
+    ],
+    "outcomes": [
+      { "amount": 3 },
+      { "amount": 2 },
+      { "amount": 1 }
+    ]
+  },
+  "스컬웹의 악의 구슬": {
+    "stamina": 100,
+    "materials": [
+      { "name": "탐욕의 실", "amount": 1 },
+      { "name": "실종된 사냥꾼 고글", "amount": 2 },
+      { "name": "공예품 끌", "amount": 1 },
+      { "name": "곰백토", "amount": 2 },
+      { "name": "사악한 기운", "amount": 18 }
+    ],
+    "outcomes": [
+      { "amount": 3 },
+      { "amount": 2 },
+      { "amount": 1 }
+    ]
+  },
+  "불꽃 감옥 구슬": {
+    "stamina": 100,
+    "materials": [
+      { "name": "연마 가루", "amount": 1 },
+      { "name": "실종된 사냥꾼 고글", "amount": 2 },
+      { "name": "공예품 끌", "amount": 1 },
+      { "name": "곰백토", "amount": 2 },
+      { "name": "넘실거리는 불꽃", "amount": 18 }
+    ],
+    "outcomes": [
+      { "amount": 3 },
+      { "amount": 2 },
+      { "amount": 1 }
+    ]
+  },
+  "물방울 떡꼬치": {
+    "stamina": 100,
+    "materials": [
+      { "name": "베어 크리스탈", "amount": 1 },
+      { "name": "실종된 사냥꾼 고글", "amount": 2 },
+      { "name": "공예품 끌", "amount": 1 },
+      { "name": "반짝수", "amount": 2 },
+      { "name": "물방울의 별", "amount": 18 }
+    ],
+    "outcomes": [
+      { "amount": 3 },
+      { "amount": 2 },
+      { "amount": 1 }
+    ]
+  },
+  "환 약": {
+    "stamina": 100,
+    "materials": [
+      { "name": "에너지 오브", "amount": 1 },
+      { "name": "실종된 사냥꾼 고글", "amount": 2 },
+      { "name": "공예품 끌", "amount": 1 },
+      { "name": "거친 종이", "amount": 2 },
+      { "name": "짐승의 꼬리", "amount": 18 }
+    ],
+    "outcomes": [
+      { "amount": 3 },
+      { "amount": 2 },
+      { "amount": 1 }
+    ]
+  },
+  "수호의 증표": {
+    "stamina": 100,
+    "materials": [
+      { "name": "베어 크리스탈", "amount": 1 },
+      { "name": "실종된 사냥꾼 고글", "amount": 2 },
+      { "name": "공예품 끌", "amount": 1 },
+      { "name": "반짝수", "amount": 2 },
+      { "name": "야생 사냥꾼 증표 I", "amount": 1 }
+    ],
+    "outcomes": [
+      { "amount": 3 },
+      { "amount": 2 },
+      { "amount": 1 }
+    ]
+  },
+  "불길한 증표": {
+    "stamina": 100,
+    "materials": [
+      { "name": "탐욕의 실", "amount": 1 },
+      { "name": "실종된 사냥꾼 고글", "amount": 2 },
+      { "name": "공예품 끌", "amount": 1 },
+      { "name": "거친 종이", "amount": 2 },
+      { "name": "야생 사냥꾼 증표 I", "amount": 1 }
+    ],
+    "outcomes": [
+      { "amount": 3 },
+      { "amount": 2 },
+      { "amount": 1 }
+    ]
+  },
+  "바다의 울림 팬던트": {
+    "stamina": 100,
+    "materials": [
+      { "name": "정화 플라스크", "amount": 1 },
+      { "name": "고대 맘모스 뿔", "amount": 2 },
+      { "name": "공예품 끌", "amount": 2 },
+      { "name": "베어 크리스탈", "amount": 2 },
+      { "name": "공허의 파동", "amount": 24 }
+    ],
+    "outcomes": [
+      { "amount": 3 },
+      { "amount": 2 },
+      { "amount": 1 }
+    ]
+  },
+  "메뚜기떼의 해적 깃발": {
+    "stamina": 100,
+    "materials": [
+      { "name": "영혼 가죽", "amount": 1 },
+      { "name": "고대 맘모스 뿔", "amount": 2 },
+      { "name": "공예품 끌", "amount": 2 },
+      { "name": "탐욕의 실", "amount": 2 },
+      { "name": "타락한 월계수 잎", "amount": 24 }
+    ],
+    "outcomes": [
+      { "amount": 3 },
+      { "amount": 2 },
+      { "amount": 1 }
+    ]
+  },
+  "날카로운 송곳니 너클": {
+    "stamina": 100,
+    "materials": [
+      { "name": "체인", "amount": 1 },
+      { "name": "고대 맘모스 뿔", "amount": 2 },
+      { "name": "공예품 끌", "amount": 2 },
+      { "name": "연마 가루", "amount": 2 },
+      { "name": "야생 사냥꾼 증표 II", "amount": 1 }
+    ],
+    "outcomes": [
+      { "amount": 3 },
+      { "amount": 2 },
+      { "amount": 1 }
+    ]
+  },
+  "엔더 소드": {
+    "stamina": 100,
+    "materials": [
+      { "name": "보존 코어 소자", "amount": 1 },
+      { "name": "고대 맘모스 뿔", "amount": 2 },
+      { "name": "공예품 끌", "amount": 2 },
+      { "name": "베어 크리스탈", "amount": 2 },
+      { "name": "타락한 요정의 가루", "amount": 24 }
+    ],
+    "outcomes": [
+      { "amount": 3 },
+      { "amount": 2 },
+      { "amount": 1 }
+    ]
+  },
+  "루미너트 루프": {
+    "stamina": 100,
+    "materials": [
+      { "name": "고품질 종이", "amount": 1 },
+      { "name": "고대 맘모스 뿔", "amount": 2 },
+      { "name": "공예품 끌", "amount": 2 },
+      { "name": "에너지 오브", "amount": 2 },
+      { "name": "요정의 가루", "amount": 24 }
+    ],
+    "outcomes": [
+      { "amount": 3 },
+      { "amount": 2 },
+      { "amount": 1 }
+    ]
+  },
+  "따스한 후드 점퍼": {
+    "stamina": 100,
+    "materials": [
+      { "name": "영혼 가죽", "amount": 1 },
+      { "name": "고대 맘모스 뿔", "amount": 2 },
+      { "name": "공예품 끌", "amount": 2 },
+      { "name": "탐욕의 실", "amount": 2 },
+      { "name": "가스트의 파편", "amount": 24 }
     ],
     "outcomes": [
       { "amount": 3 },
