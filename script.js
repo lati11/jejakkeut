@@ -103,7 +103,7 @@ function addMaterialRow(defaultName = '', defaultAmount = '') {
                     </div>
 
                     <input type="text" inputmode="numeric" data-type="unit-count" value="1" 
-                           class="w-14 py-1 px-2 border-none bg-transparent dark:text-white rounded-md text-right focus:ring-0 focus:border-none">
+                           class="w-16 py-1 px-2 border-none bg-transparent dark:text-white rounded-md text-right focus:ring-0 focus:border-none">
                     <span class="text-sm text-gray-500 dark:text-gray-400 whitespace-nowrap">개당</span>
                     <input type="text" inputmode="numeric" data-type="unit-price"
                            class="w-32 py-1 px-2 border-none bg-transparent dark:text-white rounded-md text-right focus:ring-0 focus:border-none">
@@ -700,7 +700,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <span class="text-sm font-medium dark:text-gray-200 truncate">${key}</span>
                 </div>
                 <div class="flex items-center gap-1 flex-shrink-0">
-                    <input type="text" inputmode="numeric" data-type="modal-price-count" data-key="${key}" value="${formatNum(saved.unitCount)}" placeholder="개수" class="w-8 py-1 px-1 border dark:border-gray-600 rounded bg-gray-50 dark:bg-gray-800 dark:text-white text-right text-xs focus:ring-1 focus:ring-blue-500 outline-none transition-colors">
+                    <input type="text" inputmode="numeric" data-type="modal-price-count" data-key="${key}" value="${formatNum(saved.unitCount)}" placeholder="개수" class="w-10 py-1 px-1 border dark:border-gray-600 rounded bg-gray-50 dark:bg-gray-800 dark:text-white text-right text-xs focus:ring-1 focus:ring-blue-500 outline-none transition-colors">
                     <span class="text-gray-500 dark:text-gray-400 text-xs">개당</span>
                     <input type="text" inputmode="numeric" data-type="modal-price-price" data-key="${key}" value="${formatNum(saved.unitPrice)}" placeholder="코인" class="w-24 py-1 px-1 border dark:border-gray-600 rounded bg-gray-50 dark:bg-gray-800 dark:text-white text-right text-xs focus:ring-1 focus:ring-blue-500 outline-none transition-colors">
                 </div>
