@@ -836,6 +836,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const multiplierInput = document.getElementById('altar-multiplier');
     const runBtn = document.getElementById('run-altar-calc-btn');
     const resultArea = document.getElementById('altar-result-area');
+    const copyBtn = document.getElementById('copy-altar-result-btn');
 
     const savedAltarSettings = JSON.parse(localStorage.getItem('altarSettings')) || { targetScore: 0, multiplier: 1.0, forced: {} };
     targetScoreInput.value = formatNum(savedAltarSettings.targetScore);
@@ -1083,23 +1084,26 @@ document.addEventListener("DOMContentLoaded", () => {
             if (totalCount > 0) {
                 let badge = "";
                 if (forceCount > 0) {
-                    badge = addCount === 0 ? `<span class="text-xs bg-gray-200 text-gray-600 px-1 rounded ml-2">보유템 사용</span>` 
-                                           : `<span class="text-xs bg-blue-100 text-blue-600 px-1 rounded ml-2">${forceCount}개 보유</span>`;
+                    badge = addCount === 0 ? `<span class="text-[10px] bg-gray-200 text-gray-600 px-1 rounded ml-1">보유</span>` 
+                                           : `<span class="text-[10px] bg-blue-100 text-blue-600 px-1 rounded ml-1">${forceCount}개 보유</span>`;
                 }
-
+                
                 const iconPath = getIconPath(item.name);
                 
-                resultHtml += `<div class="flex items-center justify-between border-b border-gray-200 dark:border-gray-600/50 py-2">
-                                  <div class="flex items-center gap-2">
-                                  <img src="${iconPath}" class="w-5 h-5 flex-shrink-0" onerror="this.style.display='none'">
-                                      <div class="text-sm dark:text-gray-200">${item.name} <strong class="ml-1">${totalCount}개</strong>${badge}</div>
-                                  </div>`;
-                if (addCount > 0) {
-                    resultHtml += `<div class="text-gray-500 dark:text-gray-400">${addCount}개 추가 ➝ ${formatNum(addCount * item.price)} 코인</div>`;
-                } else {
-                    resultHtml += `<div class="text-gray-400 text-xs mt-0.5">추가 불필요</div>`;
-                }
-                resultHtml += `</div>`;
+                resultHtml += `
+                <div class="flex items-center justify-between py-1.5 border-b border-blue-100 dark:border-blue-800/30 last:border-0">
+                    <div class="flex items-center gap-2 min-w-0">
+                        <img src="${iconPath}" class="w-5 h-5 flex-shrink-0" onerror="this.style.display='none'">
+                        <div class="text-xs dark:text-gray-200 truncate">
+                            <span class="font-medium">${item.name}</span>
+                            <strong class="ml-1 text-blue-600 dark:text-blue-400">${totalCount}개</strong>
+                            ${badge}
+                        </div>
+                    </div>
+                    <div class="text-[10px] text-gray-500 dark:text-gray-400 flex-shrink-0 text-right">
+                        ${addCount > 0 ? `${addCount}개 추가` : '구매 불필요'}
+                    </div>
+                </div>`;
                 
                 totalAddedCost += addCount * item.price;
             }
@@ -1122,4 +1126,45 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById('altar-res-list').innerHTML = resultHtml || "추가 구매가 필요하지 않거나, 시세 정보가 없습니다.";
         resultArea.classList.remove('hidden');
     });
+
+    copyBtn?.addEventListener('click', () => {
+        const targetScore = targetScoreInput.value;
+        const finalScore = document.getElementById('altar-res-score').textContent.replace(' 점', '');
+        const multiplier = multiplierInput.value;
+        const savedAltarSettings = JSON.parse(localStorage.getItem('altarSettings')) || { forced: {} };
+        const forced = savedAltarSettings.forced || {};
+    
+        let copyText = `[제작끝] 제단계산\n\n`;
+        copyText += `목표 점수 : ${targetScore} \n`;
+        copyText += `제단 배수 : ${multiplier}\n\n`;
+    
+        const forcedItems = Object.entries(forced).filter(([_, count]) => count > 0);
+        if (forcedItems.length > 0) {
+            copyText += `[포함시킨 아이템]\n`;
+            forcedItems.forEach(([name, count]) => {
+                const tier = ITEM_CATEGORIES[name]?.split(' ')[0] || '';
+                copyText += `- (${tier}) ${name} x ${count}\n`;
+            });
+            copyText += `\n`;
+        }
+        copyText += `[ 결과 (${finalScore}점) ]\n`;
+        const resRows = document.querySelectorAll('#altar-res-list > div');
+        resRows.forEach(row => {
+            const nameAndCount = row.querySelector('.truncate').innerText.split('\n')[0]; 
+            const name = row.querySelector('span.font-medium').innerText;
+            const count = row.querySelector('strong').innerText.replace('개', '');
+            const tier = ITEM_CATEGORIES[name]?.split(' ')[0] || '';
+            copyText += `- (${tier}) ${name} x ${count}\n`;
+        });
+    
+        navigator.clipboard.writeText(copyText.trim()).then(() => {
+            const originalText = copyBtn.textContent;
+            copyBtn.textContent = "✅ 복사 완료!";
+            setTimeout(() => copyBtn.textContent = originalText, 1500);
+        }).catch(err => {
+            alert("복사에 실패했습니다. 직접 드래그해서 복사해주세요.");
+        });
+    });
+    
 });
+
