@@ -3,7 +3,7 @@
 
 body {
     zoom: 0.7;
-    font-family: -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Pretendard', 'Malgun Gothic', 'Dotum', sans-serif;
+    font-family: 'Wanted Sans Variable', 'Wanted Sans', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Dotum', sans-serif;
 }
 
 input[type="number"]::-webkit-outer-spin-button,
